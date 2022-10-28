@@ -7,24 +7,26 @@ class List extends Component {
         super(props);
 
         this.state = {
-            age: this.props.list.age
-        }
-        ageUp = () => {
-            age.setState({
-                age: this.state.age + 1
-            })
-        }
+            age: this.props.age
+        };
 
     }
 
+    ageUp = () => {
+        this.setState({
+            age: this.state.age + 1
+        })
+    }
+
+;
     render() {
         return (
-            <>
-                <h1>{this.props.list.name}, {this.props.list.lastName}</h1>
+            <div>
+                <h1>{this.props.name}, {this.props.lastName}</h1>
                 <h3>Age: {this.state.age}</h3>
-                <h5>Hair Color: {this.props.list.desc}</h5>
+                <h5>Hair Color: {this.props.desc}</h5>
                 <button className="btn btn-secondary" onClick={this.ageUp}>Press</button>
-            </>
+            </div>
         )
     }
 }
