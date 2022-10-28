@@ -6,24 +6,24 @@ class List extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            age: this.props.list.age
+        }
+        ageUp = () => {
+            age.setState({
+                age: this.state.age + 1
+            })
+        }
 
     }
 
     render() {
         return (
             <>
-                <div>
-                    <br />
-                    <div>
-                        <div><List name={"Doe, Jane"} /></div>
-                        <div><List desc={"hair color: black"} /></div>
-                    </div>
-                    <br />
-                    <div>
-                        <div><List name={"Smith, John"} /></div>
-                        <div><List desc={"hair color: Brown"} /></div>
-                    </div>
-                </div>
+                <h1>{this.props.list.name}, {this.props.list.lastName}</h1>
+                <h3>Age: {this.state.age}</h3>
+                <h5>Hair Color: {this.props.list.desc}</h5>
+                <button className="btn btn-secondary" onClick={this.ageUp}>Press</button>
             </>
         )
     }
